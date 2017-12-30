@@ -1,3 +1,11 @@
+/*
+Facebook profile picture baloon colours:
+
+Blue: #079EE7
+Red: #F31B0C
+Yellow: #FDEF0A
+
+*/
 
 body {
    background-image: url("clown_background.png");
@@ -9,23 +17,60 @@ body {
 #header {
 	width: 100%;
 	display: inline-block;
-	padding: 3px;
+	padding: 0.5em;
+}
+
+#header-img, #main-panel {
+	border-radius: 1em;
 }
 
 #header-img {
 	display: block;
 	border: 1px solid black;
 	margin: auto;
-	border-radius: 10px;
 }
 
 #main-panel {
 	background-color: White;
 	width: 80%;
 	margin: auto;
-	border-style: solid;
-	border-color: Black;
-	border-width: thin;
-	padding: 5px;
-	border-radius: 10px;
+}
+
+#menu-bar {
+	background-color: #079EE7;
+	font-size: 1.5em;
+	padding: 0.3em;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+	border: thin solid black;
+}
+
+#menu-bar a {
+	text-decoration: none;
+	color: #FDEF0A;
+	background-color: #0893D3;
+	border-radius: 0.3em;
+	padding: 0.2em;
+	border: 2px outset #F31B0C;
+}
+
+#menu-bar a:active {
+	border-style: inset;
+}
+
+#main-panel-content {
+	padding: 0.5em;
+	border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+	border: thin solid black;
+	margin-bottom: 1em;
+}
+
+.textblock {
+	width: 50%;
+	margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Comic Sans MS";
 }
