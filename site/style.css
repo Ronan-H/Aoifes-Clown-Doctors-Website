@@ -123,8 +123,41 @@ h1, h2, h3, h4, h5, h6 {
 
 #doctor-ditzy-box {
 	background-color: #FDFF0A;
+	background-image: url("images/doctors/ditzy_glitzy/yellow_stuff_background.png");
 }
 
 #doctor-dlicious-box {
 	background: linear-gradient(to left, Red, Orange, Yellow, Yellow, Lime, Lime,  Cyan);
+}
+
+#doctor-crazyface-box {
+	background-image: url("images/doctors/crazy_face/chocolate_background.png");
+	background-repeat: repeat-x;
+	text-align: center;
+}
+
+#doctor-crazyface-box .doctor-info {
+	text-align: left;
+}
+
+#doctor-crazyface-box h1 {
+	display: inline-block;
+	padding: 1px;
+	
+	margin: auto;
+	background-color: White;
+	border: inherit;
+	border-color: #613B24;
+	border-radius: inherit;
+}
+
+#doctor-razzmatazz-box {
+	background-image: url("images/doctors/razzmatazz/every_colour.jpg");
+}
+
+#doctor-razzmatazz-box p, #doctor-ditzy-box p {
+	background-color: white;
+	border: 1px solid Black;
+	border-radius: 0.5em;
+	padding: 0.2em;
 }
