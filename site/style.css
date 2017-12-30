@@ -8,7 +8,7 @@ Yellow: #FDEF0A
 */
 
 body {
-   background-image: url("clown_background.png");
+   background-image: url("images/clown_background.png");
    background-color: White;
    margin: 0;
    overflow-x: hidden;
@@ -56,21 +56,75 @@ body {
 
 #menu-bar a:active {
 	border-style: inset;
+	background-color: #079EE7;
 }
 
 #main-panel-content {
-	padding: 0.5em;
 	border-bottom-left-radius: inherit;
 	border-bottom-right-radius: inherit;
 	border: thin solid black;
 	margin-bottom: 1em;
 }
 
-.textblock {
+.content-block {
 	width: 50%;
 	margin: auto;
+	margin-bottom: 2em;
+}
+
+.content-block img {
+	display: block;
+	width: 60%;
+	margin: auto;
+	border: 2px solid Black;
+	border-radius: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Comic Sans MS";
+	margin: 0.2em 0 0.5em 0;
+}
+
+.doctor-box {
+	width: 50%;
+	margin: auto;
+	border: 2px solid black;
+	border-radius: 1em;
+	padding: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.doctor-box img {
+	display: block;
+	width: 40%;
+	margin: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 0.5em;
+	border: 1px solid black;
+}
+
+.doctor-question, .doctor-answer {
+	font-weight: bold;
+}
+
+.question-char {
+	color: #079EE7;
+}
+
+.answer-char {
+	color: #F31B0C;
+}
+
+.question-char, .answer-char {
+	font-size: 1.5em;
+}
+
+#doctor-ditzy-box {
+	background-color: #FDFF0A;
+}
+
+#doctor-dlicious-box {
+	background: linear-gradient(to left, Red, Orange, Yellow, Yellow, Lime, Lime,  Cyan);
 }
