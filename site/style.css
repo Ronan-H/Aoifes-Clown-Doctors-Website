@@ -70,6 +70,9 @@ body {
 	width: 50%;
 	margin: auto;
 	margin-bottom: 2em;
+	border: 1px solid black;
+	border-width: 0 1px;
+	padding: 0 1em;
 }
 
 .content-block img {
@@ -82,7 +85,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Comic Sans MS";
-	margin: 0.2em 0 0.5em 0;
+	margin: 0 0 0.5em 0;
 }
 
 .doctor-box {
@@ -133,31 +136,46 @@ h1, h2, h3, h4, h5, h6 {
 #doctor-crazyface-box {
 	background-image: url("images/doctors/crazy_face/chocolate_background.png");
 	background-repeat: repeat-x;
-	text-align: center;
 }
 
-#doctor-crazyface-box .doctor-info {
+.doctor-info {
 	text-align: left;
 }
 
-#doctor-crazyface-box h1 {
+
+#doctor-crazyface-box h1,
+#doctor-razzmatazz-box h1,
+#doctor-funnybones-box   h1 {
 	display: inline-block;
-	padding: 1px;
-	
+	padding: 0.1em;
 	margin: auto;
 	background-color: White;
 	border: inherit;
-	border-color: #613B24;
-	border-radius: inherit;
+	border-width: 1px;
+	border-color: Black;
+	border-radius: 0.2em 0.6em;
+	text-align: center;
+}
+
+#doctor-crazyface-box,
+#doctor-razzmatazz-box,
+#doctor-funnybones-box  {
+	text-align: center;
 }
 
 #doctor-razzmatazz-box {
 	background-image: url("images/doctors/razzmatazz/every_colour.jpg");
 }
 
-#doctor-razzmatazz-box p, #doctor-ditzy-box p {
+#doctor-razzmatazz-box p,
+#doctor-ditzy-box p,
+#doctor-funnybones-box p {
 	background-color: white;
 	border: 1px solid Black;
 	border-radius: 0.5em;
 	padding: 0.2em;
+}
+
+#doctor-funnybones-box {
+	background-image: url("images/doctors/funnybones/fish_in_space.png");
 }
