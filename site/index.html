@@ -8,6 +8,16 @@
 	</head>
 	
 	<body>
+		<!-- Facebook JavaScript SDK -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
 		<div id="header">
 			<img id="header-img" src="images/facebook_page_img.jpg" />
 		</div>
@@ -24,7 +34,7 @@
 			</div>
 			
 			<div id="main-panel-content">
-				<div class="content-block">
+				<div id="intro-text" class="content-block">
 					<h2>Why are the Clown Doctors now called Aoife’s Clown Doctors? Who is Aoife?</h2>
 					<p>
 						Very good questions.
@@ -81,6 +91,8 @@
 						</p>
 					</i>
 				</div>
+				
+				<div id="fb-page-plugin" class="fb-page" data-href="https://www.facebook.com/aoifesclowndoctorsireland/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="500"><blockquote cite="https://www.facebook.com/aoifesclowndoctorsireland/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aoifesclowndoctorsireland/">Aoife&#039;s Clown Doctors Ireland</a></blockquote></div>
 			</div>
 		</div>
 	</body>
