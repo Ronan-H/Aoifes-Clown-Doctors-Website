@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title>Aoife's Clown Doctors Ireland</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	</head>
+	
+	<body onload="load()">
+		<div id="header">
+			<img id="header-img" src="images/facebook_page_img.jpg" />
+		</div>
+		
+		<div id="main-panel">
+			<div id="menu-bar">
+				<a href="index.html">Home</a>
+				<a href="about_us.html">About us</a>
+				<a href="our_clowns.html">Meet the Clown Doctors</a>
+				<a href="testimonials.html">Testimonials</a>
+				<a href="sponsorship.html">Sponsorship</a>
+				<a href="events.html">Events</a>
+				Gallery
+				<a href="contact.html">Contact us</a>
+			</div>
+			
+			<div id="main-panel-content">
+				<h1 id="gallery-helper-heading">Mouseover or click an image to enlarge it</h1>
+				<div id="gallery-images">
+					<table id="gallery-table">
+						
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function load() {
+				// create all the image elements
+				var numImages = 34;
+				var imagesUsed = 0;
+				var tableWidth = 4;
+				var rootImgsDir = "images/gallery_images/"; 
+				var currentTableRow;
+				
+				currentTableRow = document.createElement("tr");
+				var images = [];
+				
+				for (var imgNum = 1; imgNum <= 34; ++imgNum) {
+					var imgSrc = rootImgsDir + "thumbs/gallery_img_thumb" + imgNum + ".jpg";
+					var img = document.createElement("img");
+					
+					images.push(img);
+					
+					console.log("src: " + img.src);
+						
+						// image exists; load it onto the page
+						console.log("adding image to page");
+						
+						var td = document.createElement("td");
+						
+						//var para = document.createElement("p");
+						//para.appendChild(document.createTextNode("test"));
+						//td.appendChild(para);
+						
+						td.appendChild(img);
+						currentTableRow.appendChild(td);
+						
+						++imagesUsed;
+						
+						if (imagesUsed % tableWidth == 0) {
+							// add the last row to the page
+							if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
+							
+							// create a new table row
+							currentTableRow = document.createElement("tr");
+							// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
+						}
+					
+					img.src = imgSrc;
+				}
+				
+				if ((imagesUsed - 1) % tableWidth != 0) {
+					// add the last row to the page
+					if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
+					
+					// create a new table row
+					currentTableRow = document.createElement("tr");
+					// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
+				}
+			}
+		</script>
+	</body>
+	
+</html>
