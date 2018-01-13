@@ -36,47 +36,59 @@
 		</div>
 		
 		<script>
+			var imgSrc;
+			var enlargedSrc;
+			var img;
+			
+			var images = [];
+			var imgSrcArr = [];
+			var enlargedSrcArr = [];
+			
 			function load() {
 				// create all the image elements
 				var numImages = 34;
 				var imagesUsed = 0;
-				var tableWidth = 4;
+				var tableWidth = 1;
 				var rootImgsDir = "images/gallery_images/"; 
 				var currentTableRow;
 				
 				currentTableRow = document.createElement("tr");
-				var images = [];
 				
 				for (var imgNum = 1; imgNum <= 34; ++imgNum) {
-					var imgSrc = rootImgsDir + "thumbs/gallery_img_thumb" + imgNum + ".jpg";
-					var img = document.createElement("img");
+					imgSrc = rootImgsDir + "thumbs/gallery_img_thumb" + imgNum + ".jpg";
+					enlargedSrc = rootImgsDir + "gallery_img" + imgNum + ".jpg";
+					img = document.createElement("img");
 					
 					images.push(img);
+					imgSrcArr.push(imgSrc);
+					enlargedSrcArr.push(enlargedSrc);
 					
-					console.log("src: " + img.src);
+					img.id = "img" + imgNum;
+					
+					(function () {
+						var imgIndex = imgNum - 1;
+						img.addEventListener("mouseover", function () {enlargeImage(imgIndex)});
+					}());
+					
+					var td = document.createElement("td");
+					
+					//var para = document.createElement("p");
+					//para.appendChild(document.createTextNode("test"));
+					//td.appendChild(para);
+					
+					td.appendChild(img);
+					currentTableRow.appendChild(td);
+					
+					++imagesUsed;
+					
+					if (imagesUsed % tableWidth == 0) {
+						// add the last row to the page
+						if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
 						
-						// image exists; load it onto the page
-						console.log("adding image to page");
-						
-						var td = document.createElement("td");
-						
-						//var para = document.createElement("p");
-						//para.appendChild(document.createTextNode("test"));
-						//td.appendChild(para);
-						
-						td.appendChild(img);
-						currentTableRow.appendChild(td);
-						
-						++imagesUsed;
-						
-						if (imagesUsed % tableWidth == 0) {
-							// add the last row to the page
-							if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
-							
-							// create a new table row
-							currentTableRow = document.createElement("tr");
-							// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
-						}
+						// create a new table row
+						currentTableRow = document.createElement("tr");
+						// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
+					}
 					
 					img.src = imgSrc;
 				}
@@ -89,6 +101,20 @@
 					currentTableRow = document.createElement("tr");
 					// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
 				}
+			}
+			
+			function enlargeImage(imgNum) {
+				console.log("enlarging image " + imgNum);
+				
+				if (sessionStorage.getItem("enlargedId") !== null) {
+					// make the image that was enlarged before a thumbnail again
+					var oldImg = document.getElementById(sessionStorage.getItem("enlargedId"));
+					oldImg.src = sessionStorage.getItem("enlargedThumbSrc");
+				}
+				
+				sessionStorage.setItem("enlargedThumbSrc", images[imgNum].src);
+				images[imgNum].src = enlargedSrcArr[imgNum];
+				sessionStorage.setItem("enlargedId", images[imgNum].id);
 			}
 		</script>
 	</body>
