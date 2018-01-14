@@ -34,6 +34,7 @@ body {
 	background-color: White;
 	width: 80%;
 	margin: auto;
+	margin-bottom: 1em;
 }
 
 #menu-bar {
@@ -96,8 +97,8 @@ table, td, tr {
 	width: 50%;
 	margin: auto;
 	margin-bottom: 2em;
-	border: 1px solid black;
-	border-width: 0 1px;
+	border: 1.5px dotted #f0f0f0;
+	border-width: 0 2px;
 	padding: 0 1em;
 }
 
@@ -111,12 +112,24 @@ table, td, tr {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Comic Sans MS";
-	margin: 0 0 0.5em 0;
+	margin: 0.5em 0 0.5em 0;
 }
 
 #main-panel {
 	overflow: hidden;
 	border: thin solid Black;
+}
+
+.event-block {
+	border: thin solid #079EE7;
+	padding: 1em;
+	border-radius: 1em;
+	margin-top: 1em;
+	background-color: GhostWhite;
+}
+
+.vimeo-vid {
+	margin: 1em;
 }
 
 #intro-text {
@@ -155,8 +168,8 @@ img {
 	position: fixed;
 	background-color: #079EE7;
 	border: thin solid Black;
-	border-width: 0 1px 1px 0;
 	border-width: 1px 1px 1px 0;
+	border-radius: 0 0 1em 0;
 }
 
 #clown-bookmarks a {
@@ -180,6 +193,10 @@ img {
 	padding: 0.5em;
 	margin-top: 3em;
 	margin-bottom: 1em;
+}
+
+.doctor-box h1 {
+	margin: 0;
 }
 
 .doctor-box img {
@@ -276,4 +293,12 @@ img {
 
 #doctor-dizzylizzy-box {
 	background-image: url("images/doctors/dizzylizzy/dizzylizzy_background.png");
+}
+
+.testimonial {
+	margin-top: 1em;
+	padding: 0.5em;
+	text-align: center;
+	border: thin solid Pink;
+	border-width: 2px 0;
 }
