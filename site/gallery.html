@@ -21,7 +21,7 @@
 				<a href="testimonials.html">Testimonials</a>
 				<a href="sponsorship.html">Sponsorship</a>
 				<a href="events.html">Events</a>
-				Gallery
+				<span id="current-page">Gallery</span>
 				<a href="contact.html">Contact us</a>
 			</div>
 			
@@ -106,15 +106,10 @@
 			function enlargeImage(imgNum) {
 				console.log("enlarging image " + imgNum);
 				
-				if (sessionStorage.getItem("enlargedId") !== null) {
-					// make the image that was enlarged before a thumbnail again
-					var oldImg = document.getElementById(sessionStorage.getItem("enlargedId"));
-					oldImg.src = sessionStorage.getItem("enlargedThumbSrc");
-				}
-				
 				sessionStorage.setItem("enlargedThumbSrc", images[imgNum].src);
 				images[imgNum].src = enlargedSrcArr[imgNum];
 				sessionStorage.setItem("enlargedId", images[imgNum].id);
+				images[imgNum].width = "600";
 			}
 		</script>
 	</body>
