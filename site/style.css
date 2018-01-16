@@ -78,8 +78,8 @@ table, td, tr {
 }
 
 #contact-details {
-	margin: 0.5em;
-	font-size: 2em;
+	margin: 0.75em auto;
+	font-size: 1.25em;
 	font-family: "Comic Sans MS";
 }
 
@@ -90,7 +90,8 @@ table, td, tr {
 	border-color: LightGrey;
 }
 
-#contact-details td {
+#contact-details td,
+#contact-details th {
 	padding: 0.5em;
 }
 
