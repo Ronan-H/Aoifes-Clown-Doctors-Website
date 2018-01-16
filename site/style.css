@@ -105,12 +105,36 @@ table, td, tr {
 }
 
 .content-block {
-	width: 50%;
+	width: 60%;
 	margin: auto;
 	margin-bottom: 2em;
 	border: 1.5px dotted #f0f0f0;
 	border-width: 0 2px;
 	padding: 0 1em;
+}
+
+@media only screen and (max-width: 500px) {
+	.content-block {
+		width: 90%;
+	}
+	
+	#contact-details {
+		margin: 0.5em;
+		font-size: 1em;
+		font-family: "Comic Sans MS";
+	}
+	
+	.doctor-box {
+		width: 80% !important;
+	}
+	
+	#clown-bookmarks {
+		display: none;
+	}
+	
+	#gallery-images img {
+		width: 300px !important;
+	}
 }
 
 .content-block img {
@@ -144,13 +168,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro-text {
-	float: left;
-	margin: 0 1em;
+}
+
+#fb-page-plugin-div {
+	width: 500px;
+	margin: auto;
 }
 
 #fb-page-plugin {
-	float: right;
-	margin: 0 1em;
+	margin: 2em;
 }
 
 img {
@@ -276,10 +302,11 @@ img {
 #doctor-funnybones-box p,
 #doctor-coolio-box p,
 #doctor-dizzylizzy-box p {
-	background-color: white;
+	background-color: White;
 	border: 1px solid Black;
 	border-radius: 0.5em;
 	padding: 0.2em;
+	margin-bottom: 3em;
 }
 
 #doctor-crazyface-box,
@@ -311,5 +338,5 @@ img {
 	padding: 0.5em;
 	text-align: center;
 	border: thin solid Pink;
-	border-width: 2px 0;
+	border-width: 2px 0 0 0;
 }
