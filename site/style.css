@@ -55,6 +55,7 @@ body {
 	border-radius: 0.3em;
 	padding: 0.08em 0.2em;
 	border: 2px outset #F31B0C;
+	font-family: "Comic Sans MS";
 }
 
 #current-page {
@@ -154,6 +155,10 @@ table, td, tr {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Comic Sans MS";
 	margin: 0.5em 0 0.5em 0;
+}
+
+p {
+	font-family: "Comic Sans MS";
 }
 
 #main-panel {
@@ -257,7 +262,7 @@ img {
 }
 
 .question-char {
-	color: #079EE7;
+	color: #07C6E7;
 }
 
 .answer-char {
@@ -268,38 +273,30 @@ img {
 	font-size: 1.5em;
 }
 
-#doctor-ditzy-box {
-	background-color: #FDFF0A;
-	background-image: url("images/doctors/ditzy_glitzy/yellow_stuff_background.png");
-}
-
-#doctor-dlicious-box {
-	background: linear-gradient(to left, Red, Orange, Yellow, Yellow, Lime, Lime,  Cyan);
-}
-
-#doctor-crazyface-box {
-	background-image: url("images/doctors/crazy_face/chocolate_background.png");
-	background-repeat: repeat-x;
-}
-
 .doctor-info {
 	text-align: left;
 }
 
-
+#doctor-ditzy-box h1,
 #doctor-crazyface-box h1,
-#doctor-razzmatazz-box h1,
 #doctor-funnybones-box   h1,
 #doctor-coolio-box h1,
 #doctor-dizzylizzy-box h1 {
 	display: inline-block;
 	padding: 0.1em;
 	margin: auto;
-	background-color: White;
+	background-color: inherit;
 	border: inherit;
 	border-width: 1px;
 	border-color: Black;
 	border-radius: 0.2em 0.6em;
+}
+
+#doctor-ditzy-box,
+#doctor-crazyface-box,
+#doctor-funnybones-box,
+#doctor-coolio-box,
+#doctor-dizzylizzy-box  {
 	text-align: center;
 }
 
@@ -315,12 +312,23 @@ img {
 	margin-bottom: 3em;
 }
 
-#doctor-crazyface-box,
-#doctor-razzmatazz-box,
-#doctor-funnybones-box,
-#doctor-coolio-box,
-#doctor-dizzylizzy-box  {
-	text-align: center;
+#doctor-ditzy-box {
+	background-color: #FDEF0A;
+	background-image: url("images/doctors/ditzy_glitzy/yellow_stuff_background.png");
+}
+
+#doctor-ditzy-box p {
+	background-color: #FDEF0A;
+}
+
+#doctor-dlicious-box {
+	background: linear-gradient(to left, Red, Orange, Yellow, Yellow, Lime, Lime,  Cyan);
+}
+
+#doctor-crazyface-box {
+	background-image: url("images/doctors/crazy_face/chocolate_background.png");
+	background-repeat: repeat-x;
+	background-color: White;
 }
 
 #doctor-razzmatazz-box {
@@ -329,14 +337,25 @@ img {
 
 #doctor-funnybones-box {
 	background-image: url("images/doctors/funnybones/fish_in_space.png");
+	background-color: #3390FF;
 }
 
 #doctor-coolio-box {
 	background-image: url("images/doctors/coolio/cool_background.jpg");
+	background-color: #3390FF;
+}
+
+#doctor-coolio-box p {
+	background-color: #3390FF;
 }
 
 #doctor-dizzylizzy-box {
+	background-color: #FF7F7F;
 	background-image: url("images/doctors/dizzylizzy/dizzylizzy_background.png");
+}
+
+#doctor-dizzylizzy-box p {
+	background-color: #FF7F7F;
 }
 
 .testimonial {
