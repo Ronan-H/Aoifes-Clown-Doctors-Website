@@ -12,6 +12,7 @@ body {
    background-color: White;
    margin: 0;
    overflow-x: hidden;
+   overflow-y: scroll;
 }
 
 #header {
@@ -144,6 +145,10 @@ table, td, tr {
 	margin: auto;
 	border: 2px solid Black;
 	border-radius: 1em;
+}
+
+#testimonials-content-block {
+	width: 40%;
 }
 
 h1, h2, h3, h4, h5, h6 {
