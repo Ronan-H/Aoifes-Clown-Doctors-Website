@@ -7,6 +7,23 @@ Yellow: #FDEF0A
 
 */
 
+@font-face {
+    font-family: comicNeue;
+    src: url(fonts/ComicNeue-Regular.woff);
+}
+
+@font-face {
+    font-family: comicNeue;
+    src: url(fonts/ComicNeue-Bold.woff);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: comicNeue;
+    src: url(fonts/SF_Cartoonist_Hand_Italic.ttf);
+    font-style: italic;
+}
+
 body {
    background-image: url("images/clown_background.png");
    background-color: White;
@@ -41,6 +58,7 @@ body {
 #menu-bar {
 	background-color: #079EE7;
 	font-size: 1.5em;
+	font-weight: bold;
 	padding: 0;
 	border-top-left-radius: inherit;
 	border-top-right-radius: inherit;
@@ -55,7 +73,7 @@ body {
 	border-radius: 0.3em;
 	padding: 0.08em 0.2em;
 	border: 2px outset #F31B0C;
-	font-family: "Comic Sans MS";
+	font-family: "Comic Sans MS", "Comic Sans", comicNeue, cursive;
 }
 
 #current-page {
@@ -82,7 +100,7 @@ table, td, tr {
 #contact-details {
 	margin: 0.75em auto;
 	font-size: 1.25em;
-	font-family: "Comic Sans MS";
+	font-family: "Comic Sans MS", "Comic Sans", comicNeue, cursive;
 }
 
 #contact-details,
@@ -124,7 +142,7 @@ table, td, tr {
 	#contact-details {
 		margin: 0.5em;
 		font-size: 1em;
-		font-family: "Comic Sans MS";
+		font-family: "Comic Sans MS", "Comic Sans", comicNeue, cursive;
 	}
 	
 	.doctor-box {
@@ -153,12 +171,12 @@ table, td, tr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Comic Sans MS";
+	font-family: "Comic Sans MS", "Comic Sans", comicNeue, cursive;
 	margin: 0.5em 0 0.5em 0;
 }
 
 p {
-	font-family: "Comic Sans MS";
+	font-family: "Comic Sans MS", "Comic Sans", comicNeue, cursive;
 }
 
 #main-panel {
@@ -172,6 +190,15 @@ p {
 	border-radius: 1em;
 	margin-top: 1em;
 	background-color: GhostWhite;
+}
+
+.event-summary {
+	margin: 1em;
+	padding: 0.5em;
+	border: thin solid Pink;
+	border-radius: 0.5em;
+	border-style: outset;
+	background-color: rgb(252, 252, 255);
 }
 
 .vimeo-vid {
@@ -364,4 +391,8 @@ img {
 	text-align: center;
 	border: thin solid Pink;
 	border-width: 2px 0 0 0;
+}
+
+#governance-files {
+	font-size: 1.3em;
 }
