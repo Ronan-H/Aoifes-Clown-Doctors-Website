@@ -97,6 +97,10 @@ table, td, tr {
 	border-collapse: collapse;
 }
 
+table#bank-details, #bank-details th, #bank-details td {
+	padding: 0.5em;
+}
+
 #contact-details {
 	margin: 0.75em auto;
 	font-size: 1.25em;
@@ -164,6 +168,13 @@ table, td, tr {
 	margin: auto;
 	border: 2px solid Black;
 	border-radius: 1em;
+}
+
+#smile-img {
+	width: 9em;
+	height: 9em;
+	border: thin solid Black;
+	border-radius: 0.5em;
 }
 
 #testimonials-content-block {
