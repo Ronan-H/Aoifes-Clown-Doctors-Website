@@ -8,6 +8,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "style.css" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	
 	<body onload="load()">
@@ -28,8 +29,8 @@
 				<a href="governance.html">Governance</a>
 			</div>
 			
+			<br />
 			<div id="main-panel-content">
-				<h1 id="gallery-helper-heading">Mouseover or click an image to enlarge/focus it</h1>
 				<div id="gallery-images">
 					<table id="gallery-table">
 						
@@ -46,6 +47,7 @@
 			var images = [];
 			var imgSrcArr = [];
 			var enlargedSrcArr = [];
+			var remThumbIds = [];
 			
 			function load() {
 				// create all the image elements
@@ -67,22 +69,14 @@
 					enlargedSrcArr.push(enlargedSrc);
 					
 					img.id = "img" + imgNum;
-					
-					(function () {
-						var imgIndex = imgNum - 1;
-						img.addEventListener("mouseover", function () {enlargeImage(imgIndex)});
-					}());
+					remThumbIds.push(img.id);
 					
 					var td = document.createElement("td");
-					
-					//var para = document.createElement("p");
-					//para.appendChild(document.createTextNode("test"));
-					//td.appendChild(para);
 					
 					td.appendChild(img);
 					currentTableRow.appendChild(td);
 					
-					++imagesUsed;
+					imagesUsed++;
 					
 					if (imagesUsed % tableWidth == 0) {
 						// add the last row to the page
@@ -90,10 +84,13 @@
 						
 						// create a new table row
 						currentTableRow = document.createElement("tr");
-						// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
 					}
 					
 					img.src = imgSrc;
+				}
+
+				for (var i = 0; i < 3; i++) {
+					enlargeImage(i);
 				}
 				
 				if ((imagesUsed - 1) % tableWidth != 0) {
@@ -102,18 +99,33 @@
 					
 					// create a new table row
 					currentTableRow = document.createElement("tr");
-					// currentTableRow.id = "gallery-row-" + (imagesUsed % 4 - 1);
 				}
 			}
 			
 			function enlargeImage(imgNum) {
-				console.log("enlarging image " + imgNum);
-				
 				sessionStorage.setItem("enlargedThumbSrc", images[imgNum].src);
 				images[imgNum].src = enlargedSrcArr[imgNum];
 				sessionStorage.setItem("enlargedId", images[imgNum].id);
 				images[imgNum].width = "600";
 			}
+
+			$(window).scroll(function() {
+				for (var i = 0; i < remThumbIds.length; i++) {
+					var imgId = "#" + remThumbIds[i];
+
+					var imgDist = $(imgId).offset().top,
+						windowBottom = $(this).scrollTop() + $(window).height();
+					
+					if (imgDist - windowBottom < 0){
+						enlargeImage(parseInt(imgId.substring(4)));
+						remThumbIds.shift();
+						i--;
+					}
+					else {
+						break;
+					}
+				}
+			});
 		</script>
 	</body>
 	
