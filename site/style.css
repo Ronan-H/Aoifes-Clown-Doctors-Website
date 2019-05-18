@@ -101,10 +101,16 @@ table#bank-details, #bank-details th, #bank-details td {
 	padding: 0.5em;
 }
 
+#contact-details-block {
+	display: table;
+}
+
 #contact-details {
 	margin: 0.75em auto;
 	font-size: 1.25em;
 	font-family: comicNeue, cursive;
+	table-layout: fixed;
+	overflow: hidden;
 }
 
 #contact-details,
