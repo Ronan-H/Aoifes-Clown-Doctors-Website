@@ -399,11 +399,18 @@ img {
 }
 
 .testimonial {
-	margin-top: 1em;
-	padding: 0.5em;
 	text-align: center;
-	border: thin solid Pink;
-	border-width: 2px 0 0 0;
+	border: thin solid #F31B0C;
+	padding: 1em;
+	border-radius: 1em;
+	margin-top: 1em;
+	background-color: #FFF9F8;
+}
+
+.testimonial img {
+	width: 40%;
+	border: thin solid Black;
+	border-radius: 1em;
 }
 
 #governance-files {
