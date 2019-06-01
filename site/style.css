@@ -416,3 +416,12 @@ img {
 #governance-files {
 	font-size: 1.3em;
 }
+
+#text-donation-block {
+	margin-top: 1em;
+}
+
+#text-donation-block img {
+	width: 70%;
+	border: thin solid Black;
+}
