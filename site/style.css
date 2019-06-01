@@ -146,7 +146,7 @@ table#bank-details, #bank-details th, #bank-details td {
 
 @media only screen and (max-width: 500px) {
 	.content-block {
-		width: 95%;
+		width: 93%;
 	}
 	
 	#contact-details {
@@ -168,7 +168,7 @@ table#bank-details, #bank-details th, #bank-details td {
 	}
 
 	#text-donation-block img {
-		width: 95%;
+		width: 95% !important;
 	}
 }
 
