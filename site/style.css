@@ -170,6 +170,14 @@ table#bank-details, #bank-details th, #bank-details td {
 	#text-donation-block img {
 		width: 95% !important;
 	}
+
+	.testimonial img {
+		width: 100% !important;
+	}
+
+	#testimonials-content-block {
+		width: 90% !important;
+	}
 }
 
 .content-block img {
