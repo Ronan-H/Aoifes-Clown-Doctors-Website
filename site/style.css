@@ -79,6 +79,7 @@ body {
 #current-page {
 	border-color: #079EE7;
 	border-style: inset;
+	color: #FFFF00;
 }
 
 #menu-bar a, #current-page {
