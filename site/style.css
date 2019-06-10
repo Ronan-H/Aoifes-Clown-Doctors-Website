@@ -79,6 +79,7 @@ body {
 #current-page {
 	border-color: #079EE7;
 	border-style: inset;
+	color: #FFFF00;
 }
 
 #menu-bar a, #current-page {
@@ -201,7 +202,7 @@ table#bank-details, #bank-details th, #bank-details td {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: comicNeue, cursive;
-	margin: 0.5em 0 0.5em 0;
+	margin: 0.3em 0 0.5em 0;
 }
 
 p {
