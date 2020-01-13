@@ -1,0 +1,4 @@
+
+# update HTML content and style
+put /home/ronan/code/aoifes-clown-doctors-website/site/*.html /var/www/html
+put /home/ronan/code/aoifes-clown-doctors-website/site/style.css /var/www/html
