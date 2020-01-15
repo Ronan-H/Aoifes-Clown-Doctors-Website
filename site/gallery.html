@@ -12,121 +12,123 @@
 	</head>
 	
 	<body onload="load()">
-		<div id="header">
-			<img id="header-img" src="images/facebook_page_img.jpg" />
-		</div>
-		
-		<div id="main-panel">
-			<div id="menu-bar">
-				<a href="index.html">Home</a>
-				<a href="about_us.html">About us</a>
-				<a href="our_clowns.html">Meet the Clown Doctors</a>
-				<a href="testimonials.html">Testimonials</a>
-				<a href="sponsorship.html">Sponsorship</a>
-				<a href="events.html">Events</a>
-				<span id="current-page">Gallery</span>
-				<a href="contact.html">Contact us</a>
-				<a href="governance.html">Governance</a>
+		<div id="container">
+			<div id="header">
+				<img id="header-img" src="images/facebook_page_img.jpg" />
 			</div>
 			
-			<div id="main-panel-content">
-				<h1 align="center">Gallery</h1>
-				<div id="gallery-images">
-					<table id="gallery-table">
-						
-					</table>
+			<div id="main-panel">
+				<div id="menu-bar">
+					<a href="index.html">Home</a>
+					<a href="about_us.html">About us</a>
+					<a href="our_clowns.html">Meet the Clown Doctors</a>
+					<a href="testimonials.html">Testimonials</a>
+					<a href="sponsorship.html">Sponsorship</a>
+					<a href="events.html">Events</a>
+					<span id="current-page">Gallery</span>
+					<a href="contact.html">Contact us</a>
+					<a href="governance.html">Governance</a>
+				</div>
+				
+				<div id="main-panel-content">
+					<h1 align="center">Gallery</h1>
+					<div id="gallery-images">
+						<table id="gallery-table">
+							
+						</table>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<script>
-			var imgSrc;
-			var enlargedSrc;
-			var img;
 			
-			var images = [];
-			var imgSrcArr = [];
-			var enlargedSrcArr = [];
-			var remThumbIds = [];
-			
-			function load() {
-				// create all the image elements
-				var numImages = 34;
-				var imagesUsed = 0;
-				var tableWidth = 1;
-				var rootImgsDir = "images/gallery_images/"; 
-				var currentTableRow;
+			<script>
+				var imgSrc;
+				var enlargedSrc;
+				var img;
 				
-				currentTableRow = document.createElement("tr");
+				var images = [];
+				var imgSrcArr = [];
+				var enlargedSrcArr = [];
+				var remThumbIds = [];
 				
-				for (var imgNum = 1; imgNum <= 34; ++imgNum) {
-					imgSrc = rootImgsDir + "thumbs/gallery_img_thumb" + imgNum + ".jpg";
-					enlargedSrc = rootImgsDir + "gallery_img" + imgNum + ".jpg";
-					img = document.createElement("img");
+				function load() {
+					// create all the image elements
+					var numImages = 34;
+					var imagesUsed = 0;
+					var tableWidth = 1;
+					var rootImgsDir = "images/gallery_images/"; 
+					var currentTableRow;
 					
-					images.push(img);
-					imgSrcArr.push(imgSrc);
-					enlargedSrcArr.push(enlargedSrc);
+					currentTableRow = document.createElement("tr");
 					
-					img.id = "img" + imgNum;
-					remThumbIds.push(img.id);
+					for (var imgNum = 1; imgNum <= 34; ++imgNum) {
+						imgSrc = rootImgsDir + "thumbs/gallery_img_thumb" + imgNum + ".jpg";
+						enlargedSrc = rootImgsDir + "gallery_img" + imgNum + ".jpg";
+						img = document.createElement("img");
+						
+						images.push(img);
+						imgSrcArr.push(imgSrc);
+						enlargedSrcArr.push(enlargedSrc);
+						
+						img.id = "img" + imgNum;
+						remThumbIds.push(img.id);
+						
+						var td = document.createElement("td");
+						
+						td.appendChild(img);
+						currentTableRow.appendChild(td);
+						
+						imagesUsed++;
+						
+						if (imagesUsed % tableWidth == 0) {
+							// add the last row to the page
+							if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
+							
+							// create a new table row
+							currentTableRow = document.createElement("tr");
+						}
+						
+						img.src = imgSrc;
+					}
+
+					for (var i = 0; i < 3; i++) {
+						enlargeImage(i);
+					}
 					
-					var td = document.createElement("td");
-					
-					td.appendChild(img);
-					currentTableRow.appendChild(td);
-					
-					imagesUsed++;
-					
-					if (imagesUsed % tableWidth == 0) {
+					if ((imagesUsed - 1) % tableWidth != 0) {
 						// add the last row to the page
 						if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
 						
 						// create a new table row
 						currentTableRow = document.createElement("tr");
 					}
-					
-					img.src = imgSrc;
-				}
-
-				for (var i = 0; i < 3; i++) {
-					enlargeImage(i);
 				}
 				
-				if ((imagesUsed - 1) % tableWidth != 0) {
-					// add the last row to the page
-					if (imagesUsed != 0) document.getElementById("gallery-table").appendChild(currentTableRow);
-					
-					// create a new table row
-					currentTableRow = document.createElement("tr");
+				function enlargeImage(imgNum) {
+					sessionStorage.setItem("enlargedThumbSrc", images[imgNum].src);
+					images[imgNum].src = enlargedSrcArr[imgNum];
+					sessionStorage.setItem("enlargedId", images[imgNum].id);
+					images[imgNum].width = "600";
 				}
-			}
-			
-			function enlargeImage(imgNum) {
-				sessionStorage.setItem("enlargedThumbSrc", images[imgNum].src);
-				images[imgNum].src = enlargedSrcArr[imgNum];
-				sessionStorage.setItem("enlargedId", images[imgNum].id);
-				images[imgNum].width = "600";
-			}
 
-			$(window).scroll(function() {
-				for (var i = 0; i < remThumbIds.length; i++) {
-					var imgId = "#" + remThumbIds[i];
+				$(window).scroll(function() {
+					for (var i = 0; i < remThumbIds.length; i++) {
+						var imgId = "#" + remThumbIds[i];
 
-					var imgDist = $(imgId).offset().top,
-						windowBottom = $(this).scrollTop() + $(window).height();
-					
-					if (imgDist - windowBottom < 0){
-						enlargeImage(parseInt(imgId.substring(4)));
-						remThumbIds.shift();
-						i--;
+						var imgDist = $(imgId).offset().top,
+							windowBottom = $(this).scrollTop() + $(window).height();
+						
+						if (imgDist - windowBottom < 0){
+							enlargeImage(parseInt(imgId.substring(4)));
+							remThumbIds.shift();
+							i--;
+						}
+						else {
+							break;
+						}
 					}
-					else {
-						break;
-					}
-				}
-			});
-		</script>
+				});
+			</script>
+		</div>
 	</body>
 	
 </html>

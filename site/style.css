@@ -25,11 +25,15 @@ Yellow: #FDEF0A
 }
 
 body {
-   background-image: url("images/clown_background.png");
-   background-color: White;
-   margin: 0;
-   overflow-x: hidden;
-   overflow-y: scroll;
+	background-image: url("images/clown_background.png");
+	overflow-y: scroll;
+	margin: 0;
+}
+
+#container {
+	overflow-x: hidden;
+	overflow-y: visible;
+	margin: 0;
 }
 
 #header {
